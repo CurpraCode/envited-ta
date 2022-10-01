@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Flex, Text, Button, VStack } from "@chakra-ui/react";
+import { Box, Image, Flex, Text, Button } from "@chakra-ui/react";
 import homecard from "../assets/homecard.svg";
 import { Link } from "react-router-dom";
 // import Reac
