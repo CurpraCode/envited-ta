@@ -5,6 +5,8 @@ import arrow from "../assets/arrow.svg";
 import location from "../assets/location.svg";
 import calendar from "../assets/calendar.svg";
 const EventComp = () => {
+  const eventDetails = JSON.parse(window.localStorage.getItem("formdata"));
+  console.log(eventDetails);
   return (
     <Box height="100vh" bg="#FBFAFF">
       <Flex
@@ -29,7 +31,7 @@ const EventComp = () => {
             fontSize={{ base: "2rem", md: "2rem", lg: "3.5rem" }}
             lineHeight={{ base: "35px", md: "35px", lg: "64px" }}
           >
-            Birthday Bash
+            {eventDetails.eventName || "Birthday Bash"}
           </Text>
           <Text
             color="theme.800"
@@ -37,7 +39,7 @@ const EventComp = () => {
             fontSize={{ base: "0.8rem", md: "1rem", lg: "1.3rem" }}
             fontWeight={400}
           >
-            Hosted by Elysia
+            Hosted by {eventDetails.hostName || "Elysia"}
           </Text>
           <Box mt="2rem">
             <Flex>
@@ -59,10 +61,10 @@ const EventComp = () => {
               <Flex justifyContent="space-between" ml="1rem">
                 <Box>
                   <Text color="theme.100" fontSize="0.8rem" fontWeight={600}>
-                    18 August 6:00pm
+                    {eventDetails.location || "Street Name"}
                   </Text>
                   <Text color="theme.800" fontSize="0.8rem" fontWeight={600}>
-                    to 19 August 1:00PM UTC
+                    Suburb, State, Postcode
                   </Text>
                 </Box>
                 <Image src={arrow} width="7%" alt="" ml="2rem" />
